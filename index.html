@@ -42,7 +42,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://github.com/svbv5453/svbv5453.github.io/blob/master/img/profile.jpg?raw=true" class="js-avatar">
+			<img src="https://github.com/svbv5453/svbv5453.github.io/blob/master/img/profile.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">孙恒</a></h1>
@@ -100,7 +100,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://github.com/svbv5453/svbv5453.github.io/blob/master/img/profile.jpg?raw=true" class="js-avatar">
+				<img src="https://github.com/svbv5453/svbv5453.github.io/blob/master/img/profile.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">孙恒</h1>
@@ -304,6 +304,162 @@
 
 
   
+    <article id="post-hexo+github搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/11/hexo+github搭建个人博客/">hexo+github搭建个人博客</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/11/hexo+github搭建个人博客/" class="archive-article-date">
+  	<time datetime="2017-02-11T08:15:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>正文：</strong></p>
+<p><a href="https://www.npmjs.com/package/hexo" target="_blank" rel="external">Hexo</a>是一款基于Nodejs的静态博客框架，<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexo github链接</a>.<img src="http://7xjzgy.com1.z0.glb.clouddn.com/image/20150701/hexo20150701000.png" alt="img"></p>
+<p>[TOC]</p>
+<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><ul>
+<li><p>git安装<a href="https://git-scm.com/" target="_blank" rel="external">官网</a>，作用：把本地的hexo内容提交到github上面</p>
+</li>
+<li><p>Node.js安装<a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a>，作用：用来生成静态页面</p>
+</li>
+<li><p>github账号申请<a href="https://github.com/" target="_blank" rel="external">官网</a>，并配置github作用：用来做博客的远程创建库，域名，服务器之类</p>
+<ul>
+<li><p>申请账号</p>
+</li>
+<li><p>创建仓库:仓库名svbv5453.github.io</p>
+<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_123208.png" alt="2017-02-12_123208"></p>
+</li>
+</ul>
+</li>
+<li><p>hexo安装<a href="https://www.npmjs.com/package/hexo" target="_blank" rel="external">官网</a>，作用：静态博客框架</p>
+</li>
+<li><p>验证安装是否正确：</p>
+<blockquote>
+<p>git –version</p>
+<p>node -v</p>
+<p>npm -v</p>
+</blockquote>
+<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_121357.png" alt="2017-02-12_121357"></p>
+</li>
+</ul>
+<h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><ul>
+<li><p>在本地创建文件夹如：blog，在该文件夹下使用git进行hexo安装</p>
+</li>
+<li><p>为了避免被墙，使用淘宝NPM镜像安装，安装命令：</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;$ npm install -g cnpm --registry=https://registry.npm.taobao.org1</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>使用淘宝NPM安装Hexo，</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ cnpm install -g hexo-cli1</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>将hexo安装到本地</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ cnpm install hexo --save1</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>验证安装是否成功</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ hexo -v1</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_122049.png" alt="2017-02-12_122049"></p>
+<h2 id="本地运行Hexo"><a href="#本地运行Hexo" class="headerlink" title="本地运行Hexo"></a>本地运行Hexo</h2><ul>
+<li><p>初始化hexo</p>
+<blockquote>
+<p>$ hexo init</p>
+</blockquote>
+</li>
+<li><p>生成静态页面</p>
+<blockquote>
+<p>$ hexo generate(或者hexo g)</p>
+</blockquote>
+</li>
+<li><p>本地启动服务</p>
+<blockquote>
+<p>$ hexo server</p>
+</blockquote>
+</li>
+<li><p>调试：地址栏输入：http:localhost:4040,以后使用<a href="https://svbv5453.github.io/![2017-02-12_123324](C:\Users\Administrator\Desktop\临时图片\2017-02-12_123324.png">https://svbv5453.github.io/![2017-02-12_123324](C:\Users\Administrator\Desktop\临时图片\2017-02-12_123324.png</a>)</p>
+</li>
+<li><p>运行hexo，以后本地只需输入该命令即可</p>
+<blockquote>
+<p>$ hexo d -g</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="管理博客"><a href="#管理博客" class="headerlink" title="管理博客"></a>管理博客</h2><ul>
+<li>更改配置信息</li>
+</ul>
+<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_154545.png" alt="2017-02-12_154545"></p>
+<blockquote>
+<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_155014.png" alt="2017-02-12_155014"></p>
+<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_155053.png" alt="2017-02-12_155014"></p>
+</blockquote>
+<ul>
+<li><p>保存更改：命令如下（安装hexo git插件）</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ cnpm install hexo-deployer-git --save</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h2 id="写博文"><a href="#写博文" class="headerlink" title="写博文"></a>写博文</h2><ul>
+<li><p>使用命令创建一个：博文名称为“hexo+github搭建个人博客”</p>
+<blockquote>
+<p>$ hexo new “hexo+github搭建个人博客”</p>
+</blockquote>
+</li>
+<li><p>使用Typora编辑器编辑hello.md</p>
+</li>
+<li><p>发布更新博客：命令</p>
+<blockquote>
+<p>$ hexo d -g</p>
+</blockquote>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/11/hexo+github搭建个人博客/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-使用hexo+github搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -450,162 +606,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/02/11/使用hexo+github搭建博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo+github搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/11/hexo+github搭建个人博客/">hexo+github搭建个人博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/11/hexo+github搭建个人博客/" class="archive-article-date">
-  	<time datetime="2017-02-11T08:15:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>正文：</strong></p>
-<p><a href="https://www.npmjs.com/package/hexo" target="_blank" rel="external">Hexo</a>是一款基于Nodejs的静态博客框架，<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">hexo github链接</a>.<img src="http://7xjzgy.com1.z0.glb.clouddn.com/image/20150701/hexo20150701000.png" alt="img"></p>
-<p>[TOC]</p>
-<h1 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h1><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><ul>
-<li><p>git安装<a href="https://git-scm.com/" target="_blank" rel="external">官网</a>，作用：把本地的hexo内容提交到github上面</p>
-</li>
-<li><p>Node.js安装<a href="https://nodejs.org/en/" target="_blank" rel="external">官网</a>，作用：用来生成静态页面</p>
-</li>
-<li><p>github账号申请<a href="https://github.com/" target="_blank" rel="external">官网</a>，并配置github作用：用来做博客的远程创建库，域名，服务器之类</p>
-<ul>
-<li><p>申请账号</p>
-</li>
-<li><p>创建仓库:仓库名svbv5453.github.io</p>
-<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_123208.png" alt="2017-02-12_123208"></p>
-</li>
-</ul>
-</li>
-<li><p>hexo安装<a href="https://www.npmjs.com/package/hexo" target="_blank" rel="external">官网</a>，作用：静态博客框架</p>
-</li>
-<li><p>验证安装是否正确：</p>
-<blockquote>
-<p>git –version</p>
-<p>node -v</p>
-<p>npm -v</p>
-</blockquote>
-<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_121357.png" alt="2017-02-12_121357"></p>
-</li>
-</ul>
-<h2 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h2><ul>
-<li><p>在本地创建文件夹如：blog，在该文件夹下使用git进行hexo安装</p>
-</li>
-<li><p>为了避免被墙，使用淘宝NPM镜像安装，安装命令：</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;$ npm install -g cnpm --registry=https://registry.npm.taobao.org1</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>使用淘宝NPM安装Hexo，</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ cnpm install -g hexo-cli1</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>将hexo安装到本地</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ cnpm install hexo --save1</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>验证安装是否成功</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ hexo -v1</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_122049.png" alt="2017-02-12_122049"></p>
-<h2 id="本地运行Hexo"><a href="#本地运行Hexo" class="headerlink" title="本地运行Hexo"></a>本地运行Hexo</h2><ul>
-<li><p>初始化hexo</p>
-<blockquote>
-<p>$ hexo init</p>
-</blockquote>
-</li>
-<li><p>生成静态页面</p>
-<blockquote>
-<p>$ hexo generate(或者hexo g)</p>
-</blockquote>
-</li>
-<li><p>本地启动服务</p>
-<blockquote>
-<p>$ hexo server</p>
-</blockquote>
-</li>
-<li><p>调试：地址栏输入：http:localhost:4040,以后使用<a href="https://svbv5453.github.io/![2017-02-12_123324](C:\Users\Administrator\Desktop\临时图片\2017-02-12_123324.png">https://svbv5453.github.io/![2017-02-12_123324](C:\Users\Administrator\Desktop\临时图片\2017-02-12_123324.png</a>)</p>
-</li>
-<li><p>运行hexo，以后本地只需输入该命令即可</p>
-<blockquote>
-<p>$ hexo d -g</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="管理博客"><a href="#管理博客" class="headerlink" title="管理博客"></a>管理博客</h2><ul>
-<li>更改配置信息</li>
-</ul>
-<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_154545.png" alt="2017-02-12_154545"></p>
-<blockquote>
-<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_155014.png" alt="2017-02-12_155014"></p>
-<p><img src="C:\Users\Administrator\Desktop\临时图片\2017-02-12_155053.png" alt="2017-02-12_155014"></p>
-</blockquote>
-<ul>
-<li><p>保存更改：命令如下（安装hexo git插件）</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ cnpm install hexo-deployer-git --save</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<h2 id="写博文"><a href="#写博文" class="headerlink" title="写博文"></a>写博文</h2><ul>
-<li><p>使用命令创建一个：博文名称为“hexo+github搭建个人博客”</p>
-<blockquote>
-<p>$ hexo new “hexo+github搭建个人博客”</p>
-</blockquote>
-</li>
-<li><p>使用Typora编辑器编辑hello.md</p>
-</li>
-<li><p>发布更新博客：命令</p>
-<blockquote>
-<p>$ hexo d -g</p>
-</blockquote>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/11/hexo+github搭建个人博客/">展开全文 >></a>
         </p>
       
 
