@@ -6,14 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://svbv5453.github.io">
-  <title>Category: 二级目录 | 随风的博客</title>
+  <title>mybatis学习总结 | 随风的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="随风的博客">
-<meta property="og:url" content="http://svbv5453.github.io/categories/日志/二级目录/index.html">
+  <meta name="description" content="1、分页插件PageHelper
+功能：用于mybaits分页查询
+
+原理：在执行sql语句之前，将sql语句取出，添加分页信息，在将sql语句设置回去，最后执行sql语句，并返回查询结果，查询结果包含了分页信息
+
+使用方法：
+ 1.添加maven依赖或jar包；
+1234567&amp;lt;!--添加mybatis的分页插件--&amp;gt;    &amp;lt;!-- https://mvnrepository">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mybatis学习总结">
+<meta property="og:url" content="http://svbv5453.github.io/2017/02/22/mybatis学习总结/index.html">
 <meta property="og:site_name" content="随风的博客">
+<meta property="og:description" content="1、分页插件PageHelper
+功能：用于mybaits分页查询
+
+原理：在执行sql语句之前，将sql语句取出，添加分页信息，在将sql语句设置回去，最后执行sql语句，并返回查询结果，查询结果包含了分页信息
+
+使用方法：
+ 1.添加maven依赖或jar包；
+1234567&amp;lt;!--添加mybatis的分页插件--&amp;gt;    &amp;lt;!-- https://mvnrepository">
+<meta property="og:updated_time" content="2017-02-23T09:58:56.278Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="随风的博客">
+<meta name="twitter:title" content="mybatis学习总结">
+<meta name="twitter:description" content="1、分页插件PageHelper
+功能：用于mybaits分页查询
+
+原理：在执行sql语句之前，将sql语句取出，添加分页信息，在将sql语句设置回去，最后执行sql语句，并返回查询结果，查询结果包含了分页信息
+
+使用方法：
+ 1.添加maven依赖或jar包；
+1234567&amp;lt;!--添加mybatis的分页插件--&amp;gt;    &amp;lt;!-- https://mvnrepository">
   
     <link rel="alternative" href="/atom.xml" title="随风的博客" type="application/atom+xml">
   
@@ -149,75 +174,218 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-mybatis学习总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/11/hexo+github搭建个人博客/" class="archive-article-date">
-  	<time datetime="2017-02-11T08:15:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/11/hexo+github搭建个人博客/">hexo+github搭建个人博客</a>
+    <h1 class="article-title" itemprop="name">
+      mybatis学习总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">blog</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        <a href="/2017/02/22/mybatis学习总结/" class="archive-article-date">
+  	<time datetime="2017-02-22T12:37:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、分页插件PageHelper"><a href="#1、分页插件PageHelper" class="headerlink" title="1、分页插件PageHelper"></a>1、分页插件PageHelper</h2><ul>
+<li><p>功能：用于mybaits分页查询</p>
+</li>
+<li><p>原理：在执行sql语句之前，将sql语句取出，添加分页信息，在将sql语句设置回去，最后执行sql语句，并返回查询结果，查询结果包含了分页信息</p>
+</li>
+<li><p>使用方法：</p>
+<p> 1.添加maven依赖或jar包；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--添加mybatis的分页插件--&gt;</div><div class="line">    &lt;!-- https://mvnrepository.com/artifact/com.github.pagehelper/pagehelper --&gt;</div><div class="line">    &lt;dependency&gt;</div><div class="line">      &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</div><div class="line">      &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</div><div class="line">      &lt;version&gt;4.1.6&lt;/version&gt;</div><div class="line">    &lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<p>​</p>
+<p> 2.在SqlMapConfig.xml里面配置Plugin；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;!--添加分页插件--&gt;</div><div class="line">    &lt;plugins&gt;</div><div class="line">        &lt;plugin interceptor=<span class="string">"com.github.pagehelper.PageHelper"</span>&gt;</div><div class="line">            &lt;property name=<span class="string">"dialect"</span> value=<span class="string">"mysql"</span>/&gt;</div><div class="line">        &lt;/plugin&gt;</div><div class="line">    &lt;/plugins&gt;</div><div class="line">    &lt;mappers&gt;</div></pre></td></tr></table></figure>
+<p><strong>注：</strong> 标签<plugins>的顺序有要求</plugins></p>
+<p> 3.在执行语句之前，添加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PageHelper.startPage(page,rows);</div></pre></td></tr></table></figure>
+<p> 4.取出分页结果。创建一个PageInof对象，将查询结果返回的list传入。从PageInfo中取得分页结果。</p>
+<p>​</p>
+</li>
+<li><p>主要事项：需要配合ssm的版本</p>
+</li>
+</ul>
+<h2 id="2、mybatis-generator逆向工程"><a href="#2、mybatis-generator逆向工程" class="headerlink" title="2、mybatis-generator逆向工程"></a>2、mybatis-generator逆向工程</h2><p>通过逆向工程生成po、mapper接口和mapper.xml;使用方法</p>
+<ul>
+<li><p>在maven里面添加mybatis-generator插件；pom.xml</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></div><div class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">    &lt;groupId&gt;com.sh.mybatis&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;generator&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;!-- 添加mybatis依赖 --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;mybatis&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;3.4.1&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;!-- 添加mysql驱动依赖 --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;5.1.29&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line">    &lt;!--mybatis逆向工程依赖包--&gt;</div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;finalName&gt;<span class="built_in">test</span>&lt;/finalName&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;</div><div class="line">                &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;version&gt;1.3.2&lt;/version&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;verbose&gt;<span class="literal">true</span>&lt;/verbose&gt;</div><div class="line">                    &lt;overwrite&gt;<span class="literal">true</span>&lt;/overwrite&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>在资源目录下写配置文件generator.xml；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></div><div class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">    &lt;groupId&gt;com.sh.mybatis&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;generator&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;!-- 添加mybatis依赖 --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.mybatis&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;mybatis&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;3.4.1&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line"></div><div class="line">        &lt;!-- 添加mysql驱动依赖 --&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;mysql&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;5.1.29&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line">    &lt;!--mybatis逆向工程依赖包--&gt;</div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;finalName&gt;<span class="built_in">test</span>&lt;/finalName&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;groupId&gt;org.mybatis.generator&lt;/groupId&gt;</div><div class="line">                &lt;artifactId&gt;mybatis-generator-maven-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;version&gt;1.3.2&lt;/version&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;verbose&gt;<span class="literal">true</span>&lt;/verbose&gt;</div><div class="line">                    &lt;overwrite&gt;<span class="literal">true</span>&lt;/overwrite&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line"></div><div class="line"></div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure>
+<p>db.properties;</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">jdbc.driver=com.mysql.jdbc.Driver</div><div class="line">jdbc.url=jdbc:mysql://localhost:3306/taotao</div><div class="line">jdbc.username=root</div><div class="line">jdbc.password=123456</div><div class="line"></div><div class="line">jdbc.driverLocation=E:/Program Files/maven/LocalRepository/mysql/mysql-connector-java/5.1.30/mysql-connector-java-5.1.30.jar</div><div class="line">jdbc.pojoLocation=com.sh.ssm.taotao.po</div><div class="line">jdbc.mapperLocation=com.sh.ssm.taotao.mapper</div></pre></td></tr></table></figure>
+</li>
+<li><h4 id="在Intellij-IDEA添加一个“Run运行”选项，使用maven运行mybatis-generator-maven-plugin插件-：之后弹出运行配置框，为当前配置配置一个名称，这里其名为”generator”-然后在-“Command-line”-选项中输入“mybatis-generator-generate-e”"><a href="#在Intellij-IDEA添加一个“Run运行”选项，使用maven运行mybatis-generator-maven-plugin插件-：之后弹出运行配置框，为当前配置配置一个名称，这里其名为”generator”-然后在-“Command-line”-选项中输入“mybatis-generator-generate-e”" class="headerlink" title="在Intellij IDEA添加一个“Run运行”选项，使用maven运行mybatis-generator-maven-plugin插件 ：之后弹出运行配置框，为当前配置配置一个名称，这里其名为”generator”,然后在 “Command line” 选项中输入“mybatis-generator:generate  -e”"></a>在Intellij IDEA添加一个“Run运行”选项，使用maven运行mybatis-generator-maven-plugin插件 ：之后弹出运行配置框，为当前配置配置一个名称，这里其名为”generator”,然后在 “Command line” 选项中输入“mybatis-generator:generate  -e”</h4><p>这里加了“-e ”选项是为了让该插件输出详细信息，这样可以帮助我们定位问题。</p>
+</li>
+<li><p>双击运行mybatis-generator:generate即可。</p>
+</li>
+</ul>
+<p><em>注：</em></p>
+<ol>
+<li><p>逆向工程自动生成的Example类的作用</p>
+<ul>
+<li><p>Example类用于构造复杂的筛选条件</p>
+</li>
+<li><p><strong>基本概念</strong></p>
+<ul>
+<li><p><strong>Criterion</strong>Criterion是最基本,最底层的Where条件，用于字段级的筛选，feild用于指代字段名字,列举如下:只有一个条件,不需要其他参考值<br>feild IS NOLL<br>feild IS NOT NULL与一个参考值进行算数运算<br>feild &gt; value<br>feild &gt;= value<br>feild = value<br>feild &lt;&gt; value<br>feild &lt;= value<br>feild &lt; value与一个参考值进行模糊查询,参值中的%,?只能在构造查询条件时手动指定。</p>
+<p>feild LIKE value<br>feild NOT LIKE value介于两个参考值之间</p>
+<p>feild BETWEEN value AND secondValue在或不在一个参考值集合中,item来自于value集合</p>
+<p>feild IN (item,item,item,…)<br>feild NOT IN (item,item,item,…)MyBatis Generator会为每个字段产生如上的Criterion，如果表的字段比较多,产生的Example类会十分庞大。理论上通过Example类可以构造你想到的任何筛选条件。</p>
+</li>
+<li><p><strong>Criteria</strong>Criteria包含一个Cretiron的集合,每一个Criteria对象内包含的Cretiron之间是由AND连接的,是逻辑与的关系。</p>
+</li>
+<li><p><strong>oredCriteria</strong>Example内有一个成员叫oredCriteria,是Criteria的集合,就想其名字所预示的一样，这个集合中的Criteria是由OR连接的，是逻辑或关系。oredCriteria就是ORed Criteria。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>逆向工程生成的mapper必须在pom.xml里面进行配置，防止访问不到</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;build&gt;</div><div class="line">    &lt;!--下面这个resouces为了生成的*mapper.xml文件在java/src/com.*文件夹中能够访问到</div><div class="line">     但是必须要在generator运行完之后在添加，否则运行generator的时候会报错db.properties找不到--&gt;</div><div class="line">    &lt;resources&gt;</div><div class="line">      &lt;resource&gt;</div><div class="line">        &lt;directory&gt;src/main/java&lt;/directory&gt;</div><div class="line">        &lt;includes&gt;</div><div class="line">          &lt;include&gt;**/*.xml&lt;/include&gt;</div><div class="line">        &lt;/includes&gt;</div><div class="line">      &lt;/resource&gt;</div><div class="line">    &lt;/resources&gt;</div><div class="line">    &lt;finalName&gt;taotao&lt;/finalName&gt;</div><div class="line">  &lt;/build&gt;</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/日志/" class="article-tag-list-link color3">日志</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/二级目录/" class="article-tag-list-link color5">二级目录</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://ol9j0u1ou.bkt.clouddn.com/alipay1.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://ol9j0u1ou.bkt.clouddn.com/wechat_1.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://svbv5453.github.io/2017/02/22/mybatis学习总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/02/23/图片服务器nginx/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          图片服务器nginx
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2017/02/15/物流管理系统学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">物流管理系统学习笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
+
 
 
           </div>
@@ -240,10 +408,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		root: "/",
 		innerArchive: true,
