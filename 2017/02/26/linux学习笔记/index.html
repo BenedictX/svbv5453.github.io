@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://svbv5453.github.io/2017/02/26/linux学习笔记/index.html">
 <meta property="og:site_name" content="随风的博客">
 <meta property="og:description" content="Linux介绍">
-<meta property="og:updated_time" content="2017-02-26T11:25:16.901Z">
+<meta property="og:updated_time" content="2017-03-02T13:48:47.391Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux学习笔记">
 <meta name="twitter:description" content="Linux介绍">
@@ -174,7 +174,65 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="Linux介绍"><a href="#Linux介绍" class="headerlink" title="Linux介绍"></a>Linux介绍</h1><a id="more"></a>
-<h2 id="linux常用的命令"><a href="#linux常用的命令" class="headerlink" title="linux常用的命令"></a>linux常用的命令</h2>
+<h2 id="linux常用的命令"><a href="#linux常用的命令" class="headerlink" title="linux常用的命令"></a>linux常用的命令</h2><p>一、文件系统的管理<br>tips:输入命令的时候要常用tab键来补全</p>
+<p>ls   查看目录信息  （ ls /  ）<br>    ls -l 等价于  ll<br>pwd      查看当前所处的路径<br>cd     切换目录 (cd /) ,如果不带参数则切换到用户主目录 ~</p>
+<p>mkdir   创建文件夹<br>rmdir   删除空文件夹  (只能删除空文件夹)<br>rm -r  /a/b  (删除非空文件夹)</p>
+<p>创建文件<br>touch a.avi 创建一个空文件<br>vi blabla.txt 用文本编辑器编辑一个文件并且保存<br>echo “angelababy,zhen de hen xihuan ni” &gt; qingshu.txt  把左边的输出放到右边的文件里去 </p>
+<p>删除文件<br>rm filename  (rm -r  删除文件夹     rm -rf 强制删除文件或文件夹)<br>移动文件  修改文件名<br>mv a/wenjian1.txt b/file1.txt   (移动文件的同时还修改了文件名)</p>
+<p>拷贝文件<br>cp srcFile destFile</p>
+<p>查看文件内容<br>cat wodeqingshu.txt<br>more wodeqingshu.txt 可以分页看<br>less wodeqingshu.txt 不仅可以分页，还可以方便地搜索，回翻等操作</p>
+<p>tail -10 wodeqingshu.txt   查看文件的尾部的10行<br>程序打出的日志在生产实践中具有非凡的debug的意义<br>tail -f user.log   实时刷新显示文件的尾部</p>
+<p>head -20 wodeqingshu.txt 查看文件的头部20行</p>
+<p>二、权限管理<br>drwxrwxr-x</p>
+<p>修改权限<br>chmod  u+rwx file   为file添加或取消所属用户的权限<br>(u代表所属用户  o代表其他用户  g代表所属组的成员用户)<br>chmod 567 file 用数字也可以表示权限<br>5 —&gt;  101 —&gt; r-x</p>
+<p>修改文件的所有者owner<br>chown hadoop:hadoop  file 将file的所有者改成hadoop用户，所属组改成hadoop组</p>
+<p>上级目录的权限对本级文件或者文件夹的操作也有约束</p>
+<p>三、用户管理<br>添加用户<br>useradd  itcast0830<br>必须设置密码才能正常登陆    passwd itcast0830</p>
+<p>删除用户<br>userdel yun12<br>userdel -r itcast —–删除用户的同时删除用户的主目录</p>
+<p>修改用户属性<br>usermod -l b a 将a的登陆名改为b<br>usermod -g hadoop itcast0830 将itcast0830的组改为hadoop组<br>usermod -G hadoop,root itcast0830 给itcast0830添加两个组hadoop,root<br>usermod -d /home/itcast itcast0830 将itcast0830的主目录改成/home/itcast<br>（要事先创建itcast目录，并且拷入环境变量文件）<br>—-<em>**</em>—-修改用户的密码<br>passwd itcast0830</p>
+<p>添加用户组<br>groupadd beauties</p>
+<p>删除用户组<br>groupdel beauties</p>
+<p>修改用户组属性<br>groupmod </p>
+<p>查看当前登陆的身份<br>whoami<br>查看当前用属的组<br>groups</p>
+<p>四、常见系统管理(凡是涉及到修改，就一定要用root权限)</p>
+<hr>
+<p>轻易不要使用su去切换到root的身份<br>普通用户使用sudo来执行root权限的命令<br>如，将hadoop用户添加到sudoers文件中去<br>root    ALL=(ALL)       ALL<br>hadoop  ALL=(ALL)       ALL</p>
+<p>磁盘空间信息查看<br>df -h  查看磁盘空间状态信息<br>du -sh * 查看当前目录下所有子目录和文件的汇总大小    </p>
+<p>进程信息查看<br>free  查看内存使用状况<br>top   查看实时刷新的系统进程信息</p>
+<p>ps -ef  查看系统中当前瞬间的进程信息快照<br>ps -ef | grep myshell.sh  搜索myshell进程的信息<br>kill -9 pid  杀掉进程  （-9 表示强制杀死）</p>
+<p>五、文件归档压缩(1：打包–归档； 2：压缩)<br>1、归档<br>tar -cvf testdir.tar testdir/<br>2、压缩<br>gzip testdir.tar  </p>
+<p>gzip  file<br>bzip  file </p>
+<p>tar -czvf  testdir.tar.gz testdir/<br>tar -xzvf testdir.tar.gz  解压到当前目录下<br>tar -zxvf testdir.tar.gz -C Downloads/   解压到指定的Downloads目录下</p>
+<p>六、网络管理<br>修改ip地址的配置<br>vi /etc/sysconfig/network-scripts/ifcfg-eth0 修改该配置文件即可改ip地址<br>或者用setup指令通过一个带提示的伪图形界面来修改</p>
+<p>查看ip地址<br>ifconfig</p>
+<p>修改主机名<br>vi  /etc/sysconfig/network  修改其中的hostname配置项<br>要想立即生效  可以执行指令  hostname nidezhujiming </p>
+<p>HOSTNAME=yun12-01</p>
+<p>管理内网的主机名—ip地址映射<br>vi /etc/hosts<br>192.168.2.250  yun12-01</p>
+<p>重启网络服务<br>root权限下   service network restart<br>关闭防火墙服务  service iptables stop<br>关闭防火墙自动启动   chkconfig iptables off</p>
+<p>修改系统的默认启动级别<br>vi /etc/inittab</p>
+<p>0 - halt (Do NOT set initdefault to this)</p>
+<p>1 - Single user mode</p>
+<p>2 - Multiuser, without NFS (The same as 3, if you do not have networking)</p>
+<p>3 - Full multiuser mode</p>
+<p>4 - unused</p>
+<p>5 - X11</p>
+<p>6 - reboot (Do NOT set initdefault to this)</p>
+<p>#<br>id:3:initdefault:<br>~<br>用level 3 就启动全功能状态的字符界面 </p>
+<p>查看当前的进程连接网络的信息<br>netstat -nltp   </p>
+<p>五、常用工具指令<br>wc   统计文本信息（行数，词数，字符数）<br>date  查看或者修改系统的日期和时间<br>echo  输出字符串或者变量的值<br>vi   linux系统中最通用的文本编辑器</p>
+<p>六、linux中的软件安装<br>jdk<br>将安装包解压到你的安装路径下<br>然后修改环境变量  sudo vi /etc/profile<br>然后  source /etc/profile  来生效<br>tomcat<br>Eclipse</p>
+<p>mysql<br>redhat 公司的RPM方式的包管理 也是很常用的软件包管理器</p>
+<p>rpm -qa | grep mysql<br>sudo rpm -e mysql-libs-5.1.66-2.el6_3.i686 –nodeps<br>sudo rpm -ivh MySQL-server-5.1.73-1.glibc23.i386.rpm </p>
+<h2 id="Linux命令学习"><a href="#Linux命令学习" class="headerlink" title="Linux命令学习"></a>Linux命令学习</h2><ul>
+<li>wget：从网上下载文件，eg：wget <a href="http://cn.wordpress.org/wordpress-3.1-zh_CN.zip" target="_blank" rel="external">http://cn.wordpress.org/wordpress-3.1-zh_CN.zip</a> </li>
+</ul>
+<ol>
+<li>在vi中的命令<ul>
+<li>复制多行–》：2,5 copy 6，将2到5行复制到第六行</li>
+</ul>
+</li>
+</ol>
+
       
 
       
@@ -276,6 +334,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/03/07/springmvc学习总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          springmvc学习总结
+        
+      </div>
+    </a>
   
   
     <a href="/2017/02/23/图片服务器nginx/" id="article-nav-older" class="article-nav-link-wrap">

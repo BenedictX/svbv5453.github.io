@@ -22,7 +22,7 @@ http服务器：
 http服务器：
 虚拟主机：
 反向代理，负载均衡">
-<meta property="og:updated_time" content="2017-02-26T11:23:32.179Z">
+<meta property="og:updated_time" content="2017-03-02T13:48:41.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图片服务器nginx">
 <meta name="twitter:description" content="Nginx指南1、Nginx简介​    Nginx是一个使用c语言开发的高性能的http服务器，可以作为图片等静态资源的服务器，单个nginx服务器可以达到5万的并发。
@@ -185,7 +185,7 @@ http服务器：
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Nginx指南"><a href="#Nginx指南" class="headerlink" title="Nginx指南"></a>Nginx指南</h1><h2 id="1、Nginx简介"><a href="#1、Nginx简介" class="headerlink" title="1、Nginx简介"></a>1、Nginx简介</h2><p>​    Nginx是一个使用c语言开发的高性能的http服务器，可以作为图片等静态资源的服务器，单个nginx服务器可以达到5万的并发。</p>
+        <h1 id="Nginx指南"><a href="#Nginx指南" class="headerlink" title="Nginx指南"></a>Nginx指南</h1><h2 id="1、Nginx简介"><a href="#1、Nginx简介" class="headerlink" title="1、Nginx简介"></a>1、Nginx简介</h2><p>​    <a href="http://nginx.org/" target="_blank" rel="external">Nginx</a>是一个使用c语言开发的高性能的http服务器，可以作为图片等静态资源的服务器，单个nginx服务器可以达到5万的并发。</p>
 <h2 id="2、Nginx应用场景"><a href="#2、Nginx应用场景" class="headerlink" title="2、Nginx应用场景"></a>2、Nginx应用场景</h2><ul>
 <li>http服务器：</li>
 <li>虚拟主机：</li>
@@ -193,15 +193,114 @@ http服务器：
 </ul>
 <a id="more"></a>
 <h2 id="3、安装配置"><a href="#3、安装配置" class="headerlink" title="3、安装配置"></a>3、安装配置</h2><ul>
-<li>安装环境：需要安装在linux下，否则无法达到大的并发</li>
-<li>安装步骤：需要先安装以下文件<ul>
-<li>gcc</li>
-<li>PCRE</li>
-<li>zlib</li>
-<li>openssl</li>
+<li><p>安装环境：需要安装在linux下，否则无法达到大的并发</p>
+</li>
+<li><p>安装步骤：需要先安装以下文件，进入：/usr/java/nginx位置</p>
+<ul>
+<li>gcc：安装nginx时必须先安装相应的编译工具</li>
+<li>PCRE：支持地址重写rewrite功能，<strong>Nginx的rewrite模块和HTTP核心模块会用到PCRE正则表达式语法</strong></li>
+<li>zlib：nginx提供gzip模块，需要zlib库支持</li>
+<li>openssl：nginx提供ssl功能，<strong>若服务器提供安全网页(<a href="https://)时，会用到OpenSSL库" target="_blank" rel="external">https://)时，会用到OpenSSL库</a></strong></li>
 </ul>
 </li>
+<li><p>安装具体方法</p>
+<p>方法一：下载后安装</p>
+</li>
 </ul>
+<ol>
+<li><p>下载软件：</p>
+<p>下载PCRE    : wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.40.tar.gz</p>
+<p>下载zlib    : wget <a href="http://zlib.net/zlib-1.2.11.tar.gz" target="_blank" rel="external">http://zlib.net/zlib-1.2.11.tar.gz</a></p>
+<p>下载openssl : wget <a href="https://www.openssl.org/source/openssl-fips-2.0.14.tar.gz" target="_blank" rel="external">https://www.openssl.org/source/openssl-fips-2.0.14.tar.gz</a></p>
+<p>​</p>
+</li>
+<li><p>安装软件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">openssl ：</div><div class="line"></div><div class="line">[root@localhost] tar zxvf openssl-fips-2.0.9.tar.gz</div><div class="line"></div><div class="line">[root@localhost] <span class="built_in">cd</span> openssl-fips-2.0.9</div><div class="line"></div><div class="line">[root@localhost] ./config &amp;&amp; make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<p>方法二：</p>
+<p>yum安装：<a href="http://www.yanghengfei.com/tag/yum/" target="_blank" rel="external">yum</a>（全称为 Yellow dog Updater, Modified）是一个在Fedora和RedHat以及SUSE中的Shell前端软件包管理器。基於RPM包管理，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
+<ul>
+<li><p>gcc：yum install gcc-c++ </p>
+<p>安装nginx需要先将官网下载的源码进行编译，编译依赖gcc环境，s</p>
+</li>
+<li><p>PCRE：<strong>yum install -y pcre pcre-devel<em>**</em></strong></p>
+<p>​    PCRE(Perl Compatible Regular Expressions)是一个Perl库，包括 perl 兼容的正则表达式库。nginx的http模块使用pcre来解析正则表达式，所以需要在linux上安装pcre库。</p>
+<p>注：pcre-devel是使用pcre开发的一个二次开发库。nginx也需要此库。</p>
+</li>
+<li><p>zlib：<strong>yum install -y zlib zlib-devel<em>**</em></strong></p>
+<p>​    zlib库提供了很多种压缩和解压缩的方式，nginx使用zlib对http包的内容进行gzip，所以需要在linux上安装zlib库。</p>
+</li>
+<li><p>openssl：<strong>yum install -y openssl openssl-devel<em>**</em></strong></p>
+<p>​    OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。</p>
+<p>​    nginx不仅支持http协议，还支持https（即在ssl协议上传输http），所以需要在linux安装openssl库。</p>
+<p>​</p>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="4、安装Nginx"><a href="#4、安装Nginx" class="headerlink" title="4、安装Nginx"></a>4、安装Nginx</h2><ul>
+<li><p>下载安装包</p>
+<p>下载nginx:    wget <a href="http://nginx.org/download/nginx-1.10.3.tar.gz" target="_blank" rel="external">http://nginx.org/download/nginx-1.10.3.tar.gz</a></p>
+</li>
+<li><p>配置：configure—&gt;生成一个makefile文件</p>
+<p>./configure \</p>
+<p>–prefix=/usr/java/nginx \</p>
+<p>–pid-path=/var/run/nginx/nginx.pid \</p>
+<p>–lock-path=/var/lock/nginx.lock \</p>
+<p>–error-log-path=/var/log/nginx/error.log \</p>
+<p>–http-log-path=/var/log/nginx/access.log \</p>
+<p>–with-http_gzip_static_module \</p>
+<p>–http-client-body-temp-path=/var/temp/nginx/client \</p>
+<p>–http-proxy-temp-path=/var/temp/nginx/proxy \</p>
+<p>–http-fastcgi-temp-path=/var/temp/nginx/fastcgi \</p>
+<p>–http-uwsgi-temp-path=/var/temp/nginx/uwsgi \</p>
+<p>–http-scgi-temp-path=/var/temp/nginx/scgi</p>
+</li>
+<li><p>编译：make</p>
+</li>
+<li><p>安装：make intall</p>
+</li>
+</ul>
+<h2 id="5、Nginx的启动和关闭"><a href="#5、Nginx的启动和关闭" class="headerlink" title="5、Nginx的启动和关闭"></a>5、Nginx的启动和关闭</h2><ul>
+<li>启动：在nginx/sbin目录下：./nginx</li>
+<li>关闭：在nginx/sbin目录下：./nginx -s stop</li>
+<li>刷新配置文件：在nginx/sbin目录下：./nginx -s reload</li>
+</ul>
+<p>注：</p>
+<ul>
+<li><p>linux重启nginx后出现nginx的pid丢失的解决方案：/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf</p>
+</li>
+<li><p>关掉Linux的防火墙：</p>
+<p>systemctl stop firewalld<br>systemctl mask firewalld</p>
+</li>
+<li><p>​</p>
+</li>
+</ul>
+<h2 id="6、测试Nginx安装是否成功"><a href="#6、测试Nginx安装是否成功" class="headerlink" title="6、测试Nginx安装是否成功"></a>6、测试Nginx安装是否成功</h2><p>​    访问本机ip，出现欢迎界面，安装成功</p>
+<h2 id="7、Nginx的反向代理"><a href="#7、Nginx的反向代理" class="headerlink" title="7、Nginx的反向代理"></a>7、Nginx的反向代理</h2><pre><code>###     什么是反向代理
+</code></pre><p>​    pc机访问淘宝，通过反向代理服务器来决定由哪个服务器来处理请求，反向代理服务器的作用就是：请求转发，主要应用在服务端。</p>
+<h3 id="Nginx的反向代理"><a href="#Nginx的反向代理" class="headerlink" title="Nginx的反向代理"></a>Nginx的反向代理</h3><ul>
+<li><p>在nginx.conf里面配置多个服务器</p>
+<p>upstream tomcats{</p>
+<p> server 192.168.66.129:8080 weight=2;<br> server 192.168.66.129:8081;</p>
+<pre><code>}
+</code></pre><p>server {</p>
+<pre><code>listen       80;
+server_name  tomcat.svbv5453.com;
+
+#charset koi8-r;
+
+#access_log  logs/host.access.log  main;
+
+location / {
+    proxy_pass   http://tomcats;
+    index  index.html index.htm;
+}
+</code></pre><p> }    </p>
+</li>
+<li>负载均衡</li>
+</ul>
+<p>只需要在upstream的server后面添加一个weight即可代表权重。权重越高，分配请求的数量就越多。默认权重是1</p>
 
       
 
